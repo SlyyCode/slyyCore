@@ -34,7 +34,7 @@ CreateThread(function()
                                 slyyCore.modules.zones.inCooldown = false
                             end)
                         else 
-                            slyyCore.utils.notification("~g~Zone~s~\nMerci de ne pas spam ta touche.")
+                            slyyCore.utils.notification(_U("DONT_SPAM_ZONE_KEY"))
                         end
                     end
                 end

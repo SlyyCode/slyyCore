@@ -29,7 +29,7 @@ else
     end 
 
     local file_label = Config.Language..".json"
-    local file = io.open("resources/slyyCore/languages/"..file_label, "r+")
+    local file = io.open(Config.LocalFile.."/languages/"..file_label, "r+")
     
     if (file == nil) then 
         slyyCore.console:error("Server loading error.")
