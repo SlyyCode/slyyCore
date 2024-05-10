@@ -15,16 +15,14 @@ slyyCore.modules.zones.new = function(position, marker, helpText, dist, onIntera
         draw = dist.draw or 20,
         interact = dist.interact or 2
     }
-
     self.onInteract = function(source)
-        print(("%s à intéragit avec la zone numéro %s."):format(GetPlayerName(source), self.id))
+        slyyCore.console:debug(("%s to interact with zone %s."):format(GetPlayerName(source), self.id))
         onInteract(source)
     end
 
-    print(("Created zone id: %s"):format(self.id))
-
-    slyyCore.events:all("zones:new", self)
     slyyCore.modules.zones.list[self.id] = self
+    slyyCore.console:debug(("Created zone id: %s"):format(self.id))
+    slyyCore.events:all("zones:new", self)
     return self
 end
 

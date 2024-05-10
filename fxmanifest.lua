@@ -5,6 +5,8 @@ version "1.0.0"
 author "Slyy"
 
 shared_scripts {
+    "configuration/global.lua",
+    "src/utils/console.lua",
     "src/main.lua",
     "src/utils/events.lua",
     "src/utils/main.lua",
