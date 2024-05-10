@@ -1,9 +1,9 @@
-slyyCore.zones.list = {}
+slyyCore.modules.zones.list = {}
 
-slyyCore.zones.new = function(position, marker, helpText, dist, onInteract)
-    local self = setmetatable({}, slyyCore.zones.list)
+slyyCore.modules.zones.new = function(position, marker, helpText, dist, onInteract)
+    local self = setmetatable({}, slyyCore.modules.zones.list)
 
-    self.id = #slyyCore.zones.list + 1
+    self.id = #slyyCore.modules.zones.list + 1
     self.position = position 
     self.marker = {
         id = marker.id or 0,
@@ -24,12 +24,12 @@ slyyCore.zones.new = function(position, marker, helpText, dist, onInteract)
     print(("Created zone id: %s"):format(self.id))
 
     TriggerClientEvent("zones:new", -1, self)
-    slyyCore.zones.list[self.id] = self
+    slyyCore.modules.zones.list[self.id] = self
     return self
 end
 
 RegisterCommand("test", function()
-    slyyCore.zones.new(vector3(169.11, -875.15, 30.45), {
+    slyyCore.modules.zones.new(vector3(169.11, -875.15, 30.45), {
         id = 0,
         color = {0, 0, 255, 255},
         bobUpAndDown = true,

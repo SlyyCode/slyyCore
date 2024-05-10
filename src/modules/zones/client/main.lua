@@ -1,10 +1,10 @@
-slyyCore.zones = {}
-slyyCore.zones.list = {}
-slyyCore.zones.inCooldown = false
+slyyCore.modules.zones = {}
+slyyCore.modules.zones.list = {}
+slyyCore.modules.zones.inCooldown = false
 
 RegisterNetEvent("zones:new")
 AddEventHandler("zones:new", function(zone)
-    slyyCore.zones.list[zone.id] = zone
+    slyyCore.modules.zones.list[zone.id] = zone
     print("Received new zone.")
 end)
 
@@ -14,20 +14,20 @@ CreateThread(function()
         local pPed = PlayerPedId()
         local pCoords = GetEntityCoords(pPed)
 
-        for k,v in pairs(slyyCore.zones.list) do 
+        for k,v in pairs(slyyCore.modules.zones.list) do 
             local distToMarker = #(pCoords - v.position)
             if distToMarker < v.marker.draw then 
                 DrawMarker(2, v.position, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.marker.size[1], v.marker.size[2], v.marker.size[3], v.marker.color[1], v.marker.color[2], v.marker.color[3], v.marker.color[4], v.marker.bobUpAndDown, v.marker.faceCamera, 2, v.marker.rotate, nil, nil, false)
                 if distToMarker < v.marker.interact then 
                     if IsControlJustPressed(0, 51) then 
-                        if not slyyCore.zones.inCooldown then
-                            slyyCore.zones.inCooldown = true
+                        if not slyyCore.modules.zones.inCooldown then
+                            slyyCore.modules.zones.inCooldown = true
                             TriggerServerEvent("zones:interact", k)
                             SetTimeout(1000, function()
-                                slyyCore.zones.inCooldown = false
+                                slyyCore.modules.zones.inCooldown = false
                             end)
                         else 
-                            print("attends un peu")
+                            slyyCore.utils.notification("~g~Zone~s~\nMerci de ne pas spam ta touche.")
                         end
                     end
                 end
