@@ -1,17 +1,17 @@
 # slyyCore
 
-slyyCore est l'élément central qui alimente tous les addons disponibles dans ma boutique, garantissant leur bon fonctionnement.
+slyyCore is the backbone that powers all the addons available in my shop, ensuring they function seamlessly.
 
-Pour accéder aux addons et libérer tout leur potentiel, visitez [ma boutique](https://discord.gg/slyydev).
+To access the addons and unleash their full potential, visit [my shop](https://discord.gg/slyydev).
 
-## Pourquoi slyyCore ?
+## Why slyyCore?
 
-Ce n'est pas simplement essentiel, c'est *vital* de configurer slyyCore pour assurer des performances optimales des addons.
+It's not just essential, it's *vital* to set up slyyCore to ensure optimal performance of the addons.
 
 ## Configuration
 
-La configuration de slyyCore est conçue pour être polyvalente et adaptable à votre infrastructure.
+The configuration of slyyCore is designed to be versatile and adaptable to your framework.
 
 ## Open Source
 
-slyyCore est open source, vous permettant la liberté de le personnaliser et de le modifier selon vos souhaits. Cependant, veuillez noter que le code source des addons restera crypté pour des raisons de propriété.
+slyyCore is open source, allowing you the freedom to customize and tweak it to your heart's content. However, please note that the source code of the addons will remain encrypted for proprietary reasons.
