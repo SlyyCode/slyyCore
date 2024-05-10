@@ -18,29 +18,29 @@ slyyCore.modules.zones.createPrivate = function(position, marker, helpText, dist
     return zone.id
 end
 
-RegisterCommand("test", function()
-    slyyCore.modules.zones.createPublic(vector3(169.11, -875.15, 30.45), {
-        id = 0,
-        color = {0, 0, 255, 255},
-        bobUpAndDown = true,
-        faceCamera = false,
-        rotate = true
-    }, "Appuyez ici pour intéragir", {draw = 10, interact = 2}, function(source)
-        print("test")
-    end)
-end, false)
+-- RegisterCommand("test", function()
+--     slyyCore.modules.zones.createPublic(vector3(169.11, -875.15, 30.45), {
+--         id = 0,
+--         color = {0, 0, 255, 255},
+--         bobUpAndDown = true,
+--         faceCamera = false,
+--         rotate = true
+--     }, "Appuyez ici pour intéragir", {draw = 10, interact = 2}, function(source)
+--         print("test")
+--     end)
+-- end, false)
 
-RegisterCommand("test2", function()
-    slyyCore.modules.zones.createPrivate(vector3(169.11, -875.15, 30.45), {
-        id = 0,
-        color = {0, 0, 255, 255},
-        bobUpAndDown = true,
-        faceCamera = false,
-        rotate = true
-    }, "Appuyez ici pour intéragir", {draw = 10, interact = 2}, function(source)
-        print("test")
-    end, {1})
-end, false)
+-- RegisterCommand("test2", function()
+--     slyyCore.modules.zones.createPrivate(vector3(169.11, -875.15, 30.45), {
+--         id = 0,
+--         color = {0, 0, 255, 255},
+--         bobUpAndDown = true,
+--         faceCamera = false,
+--         rotate = true
+--     }, "Appuyez ici pour intéragir", {draw = 10, interact = 2}, function(source)
+--         print("test")
+--     end, {1})
+-- end, false)
 
 slyyCore.events:new("zones:interact", function(zoneId)
     if (slyyCore.modules.zones.list[zoneId] == nil) then return end 

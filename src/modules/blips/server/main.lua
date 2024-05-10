@@ -18,26 +18,30 @@ slyyCore.modules.blip.createPrivate = function(title, position, blip, baseAuthor
     return blip.id
 end
 
-RegisterCommand("blip", function()
-    slyyCore.modules.blip.createPublic("Mon blip", vector3(169.11, -875.15, 30.45), {
-        sprite = 137,
-        color = 47,
-        shortRange = true
-    })
-end, false)
+-- RegisterCommand("blip", function()
+--     slyyCore.modules.blip.createPublic("Mon blip", vector3(169.11, -875.15, 30.45), {
+--         sprite = 137,
+--         color = 47,
+--         shortRange = true
+--     })
+-- end, false)
 
-RegisterCommand("blip2", function()
-    slyyCore.modules.blip.createPrivate("Mon blip", vector3(169.11, -875.15, 30.45), {
-        sprite = 137,
-        color = 47,
-        shortRange = true
-    })
-end, false)
+-- RegisterCommand("blip2", function()
+--     slyyCore.modules.blip.createPrivate("Mon blip", vector3(169.11, -875.15, 30.45), {
+--         sprite = 137,
+--         color = 47,
+--         shortRange = true
+--     })
+-- end, false)
 
-RegisterCommand("blip3", function()
-    slyyCore.modules.blip.createPrivate("Mon blip", vector3(169.11, -875.15, 30.45), {
-        sprite = 137,
-        color = 47,
-        shortRange = true
-    }, {1})
-end, false)
+-- RegisterCommand("blip3", function()
+--     slyyCore.modules.blip.createPrivate("Mon blip", vector3(169.11, -875.15, 30.45), {
+--         sprite = 137,
+--         color = 47,
+--         shortRange = true
+--     }, {1})
+-- end, false)
+
+slyyCore.events:new("onPlayerJoinded", function()
+    slyyCore.events:client("blip:receiveBlip", source, slyyCore.modules.blip.list)
+end)
