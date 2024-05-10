@@ -18,4 +18,6 @@ slyyCore is open source, allowing you the freedom to customize and tweak it to y
 
 ⚠️ **But I don't authorise any use of this resource other than to run the addons. So you don't have the right to take the code of anything and use it for another third-party resource.**
 
-Copyright by Slyy, [my website](https://slyy.fr/)
+
+
+*Copyright by Slyy, [my website](https://slyy.fr/)*
