@@ -33,6 +33,5 @@ slyyCore.modules.zones.new = function(position, marker, helpText, dist, onIntera
     end
 
     slyyCore.modules.zones.list[self.id] = self
-    slyyCore.events:all("zones:new", self)
     return self
 end

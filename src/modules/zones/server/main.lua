@@ -27,7 +27,7 @@ RegisterCommand("test", function()
         rotate = true
     }, "Appuyez ici pour intéragir", {draw = 10, interact = 2}, function(source)
         print("test")
-    end, {2})
+    end)
 end, false)
 
 RegisterCommand("test2", function()
@@ -39,7 +39,7 @@ RegisterCommand("test2", function()
         rotate = true
     }, "Appuyez ici pour intéragir", {draw = 10, interact = 2}, function(source)
         print("test")
-    end)
+    end, {1})
 end, false)
 
 slyyCore.events:new("zones:interact", function(zoneId)
