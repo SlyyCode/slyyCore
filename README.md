@@ -15,3 +15,7 @@ The configuration of slyyCore is designed to be versatile and adaptable to your 
 ## Open Source
 
 slyyCore is open source, allowing you the freedom to customize and tweak it to your heart's content. However, please note that the source code of the addons will remain encrypted for proprietary reasons.
+
+⚠️ **But I don't authorise any use of this resource other than to run the addons. So you don't have the right to take the code of anything and use it for another third-party resource.**
+
+Copyright by Slyy, [my website](https://slyy.fr/)
