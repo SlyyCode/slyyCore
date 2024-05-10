@@ -2,9 +2,16 @@ slyyCore.modules.zones = {}
 slyyCore.modules.zones.list = {}
 slyyCore.modules.zones.inCooldown = false
 
+slyyCore.events:new("zones:receiveZones", function(list)
+    slyyCore.modules.zones.list = list
+end)
+
 slyyCore.events:new("zones:new", function(zone)
     slyyCore.modules.zones.list[zone.id] = zone
-    print("Received new zone.")
+end)
+
+slyyCore.events:new("zones:remove", function(zoneId)
+    slyyCore.modules.zones.list[zoneId] = nil
 end)
 
 CreateThread(function()

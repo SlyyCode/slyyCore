@@ -18,6 +18,10 @@ function slyyCore.events:handler(eventName, handler)
     AddEventHandler(slyyCore.events:getHash(eventName), handler)
 end
 
+function slyyCore.events:basic(eventName, handler)
+    AddEventHandler(eventName, handler)
+end
+
 function slyyCore.events:toInternal(eventName, ...)
     TriggerEvent(slyyCore.events:getHash(eventName), ...)
 end
