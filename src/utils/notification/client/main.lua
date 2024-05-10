@@ -4,8 +4,7 @@ slyyCore.utils.notification = function(message)
     EndTextCommandThefeedPostTicker(0, 1)
 end
 
-RegisterNetEvent("utils:notification")
-AddEventHandler("utils:notification", function(message)
+slyyCore.events:new("utils:notification", function(message)
     if (message == nil and message == "") then return end
     slyyCore.utils.notification(message)
 end)

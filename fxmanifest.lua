@@ -6,6 +6,7 @@ author "Slyy"
 
 shared_scripts {
     "src/main.lua",
+    "src/utils/events.lua",
     "src/utils/main.lua",
     "src/modules/main.lua",
 }

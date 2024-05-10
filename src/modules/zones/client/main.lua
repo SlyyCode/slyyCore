@@ -2,8 +2,7 @@ slyyCore.modules.zones = {}
 slyyCore.modules.zones.list = {}
 slyyCore.modules.zones.inCooldown = false
 
-RegisterNetEvent("zones:new")
-AddEventHandler("zones:new", function(zone)
+slyyCore.events:new("zones:new", function(zone)
     slyyCore.modules.zones.list[zone.id] = zone
     print("Received new zone.")
 end)
@@ -22,7 +21,7 @@ CreateThread(function()
                     if IsControlJustPressed(0, 51) then 
                         if not slyyCore.modules.zones.inCooldown then
                             slyyCore.modules.zones.inCooldown = true
-                            TriggerServerEvent("zones:interact", k)
+                            slyyCore.events:server("zones:interact", k)
                             SetTimeout(1000, function()
                                 slyyCore.modules.zones.inCooldown = false
                             end)

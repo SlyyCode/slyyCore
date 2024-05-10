@@ -23,7 +23,7 @@ slyyCore.modules.zones.new = function(position, marker, helpText, dist, onIntera
 
     print(("Created zone id: %s"):format(self.id))
 
-    TriggerClientEvent("zones:new", -1, self)
+    slyyCore.events:all("zones:new", self)
     slyyCore.modules.zones.list[self.id] = self
     return self
 end
