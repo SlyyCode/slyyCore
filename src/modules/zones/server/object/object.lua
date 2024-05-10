@@ -1,10 +1,11 @@
 slyyCore.modules.zones.list = {}
 
-slyyCore.modules.zones.new = function(position, marker, helpText, dist, onInteract)
+slyyCore.modules.zones.new = function(position, marker, helpText, dist, onInteract, public, baseAuthorized)
     local self = setmetatable({}, slyyCore.modules.zones.list)
 
     self.id = #slyyCore.modules.zones.list + 1
     self.position = position 
+    self.helpText = helpText
     self.marker = {
         id = marker.id or 0,
         color = marker.color or {0, 0, 0, 255},
@@ -19,21 +20,19 @@ slyyCore.modules.zones.new = function(position, marker, helpText, dist, onIntera
         slyyCore.console:debug(("%s to interact with zone %s."):format(GetPlayerName(source), self.id))
         onInteract(source)
     end
+    self.public = public
+    self.authorized = baseAuthorized or {}
+
+    self.isAuthorized = function(source)
+        for k,v in pairs(self.authorized) do 
+            if source == v then 
+                return true
+            end
+        end
+        return false
+    end
 
     slyyCore.modules.zones.list[self.id] = self
-    slyyCore.console:debug(("Created zone id: %s"):format(self.id))
     slyyCore.events:all("zones:new", self)
     return self
 end
-
-RegisterCommand("test", function()
-    slyyCore.modules.zones.new(vector3(169.11, -875.15, 30.45), {
-        id = 0,
-        color = {0, 0, 255, 255},
-        bobUpAndDown = true,
-        faceCamera = false,
-        rotate = true
-    }, "Appuyez ici pour intéragir", {draw = 10, interact = 2}, function(source)
-        print("test")
-    end)
-end, false)

@@ -25,6 +25,7 @@ CreateThread(function()
             if distToMarker < v.marker.draw then 
                 DrawMarker(2, v.position, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.marker.size[1], v.marker.size[2], v.marker.size[3], v.marker.color[1], v.marker.color[2], v.marker.color[3], v.marker.color[4], v.marker.bobUpAndDown, v.marker.faceCamera, 2, v.marker.rotate, nil, nil, false)
                 if distToMarker < v.marker.interact then 
+                    slyyCore.utils.helpNotification(v.helpText, true)
                     if IsControlJustPressed(0, 51) then 
                         if not slyyCore.modules.zones.inCooldown then
                             slyyCore.modules.zones.inCooldown = true
