@@ -1,6 +1,9 @@
-Config.new = function()
+Config.list = {}
+
+Config.new = function(name)
     local self = {}
-    local self.data = {}
+    self.name = name
+    self.data = {}
 
     self.set = function(self, key, value)
         self.data[key] = value
@@ -18,5 +21,11 @@ Config.new = function()
         return self.data[key] ~= nil
     end
 
+    Config.list[name] = self
     return self
+end
+
+Config.getConfig = function(name)
+    if (Config.list[name] == nil) then return end
+    return Config.list[name]
 end

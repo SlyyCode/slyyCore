@@ -6,6 +6,7 @@ author "Slyy"
 
 shared_scripts {
     "configuration/global.lua",
+    "src/class/config.lua",
     "src/utils/console.lua",
     "src/main.lua",
     "src/utils/events.lua",
