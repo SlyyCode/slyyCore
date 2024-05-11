@@ -21,6 +21,11 @@ if not IsDuplicityVersion() then
             end
             Wait(100)
         end
+
+        slyyCore.events:new("locales:receive", function(data)
+            slyyCore.console:sucess("Received server locales.")
+            slyyCore.locale = data
+        end)
     end)
 else 
     local time = os.time()
@@ -58,4 +63,8 @@ else
     file:close()
     slyyCore.console:sucess(("Local %s successfully loaded."):format(file_label))
     slyyCore.events:toInternal("serverLoaded")
+
+    slyyCore.events:handler("onPlayerJoinded", function()
+        slyyCore.events:client("locales:receive", source, slyyCore.locale)
+    end)
 end
