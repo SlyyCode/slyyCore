@@ -3,5 +3,6 @@
     
     "CARDEALER": "Concessionnaire",
     "CARDEALER_MENU_AUTOBUY_TITLE": "Concessionnaire",
-    "CARDEALER_MENU_AUTOBUY_DESC": "Vente automatique"
+    "CARDEALER_MENU_AUTOBUY_DESC": "Vente automatique",
+    "CARDEALER_HELPTEXT_AUTOBUY": "Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le catalogue."
 }

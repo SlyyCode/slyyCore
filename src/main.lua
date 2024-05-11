@@ -1,6 +1,14 @@
 slyyCore = {}
 slyyCore.locale = {}
 
+function _(localName, ...)
+    if (slyyCore.locale[localName] == nil) then 
+        slyyCore.console:error(("The local %s does not exist."):format(localName))
+        return ("The local %s does not exist."):format(localName)
+    end
+    return (slyyCore.locale[localName]):format(...)
+end
+
 if not IsDuplicityVersion() then 
     CreateThread(function()
         while true do
@@ -50,12 +58,4 @@ else
     file:close()
     slyyCore.console:sucess(("Local %s successfully loaded."):format(file_label))
     slyyCore.events:toInternal("serverLoaded")
-end
-
-function _(localName, ...)
-    if (slyyCore.locale[localName] == nil) then 
-        slyyCore.console:error(("The local %s does not exist."):format(localName))
-        return ("The local %s does not exist."):format(localName)
-    end
-    return (slyyCore.locale[localName]):format(...)
 end
