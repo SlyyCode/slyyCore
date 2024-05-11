@@ -13,10 +13,11 @@ end
 slyyCore.openRUI = function(data, checkCoords)
     local menu = RageUI.CreateMenu(data.main.title, data.main.desc)
     local submenus = {}
-
+    
     for k,v in pairs(data.submenus) do 
         submenus[k] = RageUI.CreateSubMenu(menu, v.title, v.desc)
     end
+
     RageUI.Visible(menu, not RageUI.Visible(menu))
     slyyCore.inMenu = true
 
@@ -48,7 +49,9 @@ slyyCore.openRUI = function(data, checkCoords)
             menu = RMenu:DeleteType("menu", true)
 
             slyyCore.inMenu = false
-            data.closed()
+            if data.closed ~= nil then
+                data.closed()
+            end
         end
     end
 end
