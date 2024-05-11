@@ -1,5 +1,3 @@
-slyyCore.menu = {}
-
 local function allMenusClosed(menu, submenus)
     if not RageUI.Visible(menu) then
         for _, submenu in pairs(submenus) do
@@ -12,7 +10,7 @@ local function allMenusClosed(menu, submenus)
     return false
 end
 
-slyyCore.menu.new = function(data, checkCoords)
+slyyCore.openRUI = function(data, checkCoords)
     local menu = RageUI.CreateMenu(data.main.title, data.main.desc)
     local submenus = {}
 
