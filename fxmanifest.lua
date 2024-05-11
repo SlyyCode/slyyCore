@@ -17,6 +17,17 @@ shared_scripts {
 }
 
 client_scripts {
+    --RUI
+    "libs/rui/RMenu.lua",
+    "libs/rui/menu/RageUI.lua",
+    "libs/rui/menu/Menu.lua",
+    "libs/rui/menu/MenuController.lua",
+    "libs/rui/components/*.lua",
+    "libs/rui/menu/elements/*.lua",
+    "libs/rui/menu/items/*.lua",
+    "libs/rui/menu/panels/*.lua",
+    "libs/rui/menu/windows/*.lua",
+    -- Src
     "src/utils/**/client/*.lua",
     "src/modules/**/client/*.lua",
     -- Addons
