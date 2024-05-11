@@ -23,3 +23,9 @@ end
 print = function(...)
     slyyCore.console:print(...)
 end
+
+if IsDuplicityVersion() then 
+    slyyCore.events:new("toServerPrint", function(...)
+        slyyCore.console:print(...)
+    end)
+end

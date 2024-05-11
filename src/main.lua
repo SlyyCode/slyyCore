@@ -15,7 +15,15 @@ if not IsDuplicityVersion() then
         end
     end)
 else 
+    local time = os.time()
     Wait(50) -- Wait all file load
+    slyyCore.events:new("serverLoaded", function()
+        local elapsedTime = os.time() - time
+        local elapsedTimeSeconds = elapsedTime / 1000000
+        local elapsedTimeString = string.format("%.6f", elapsedTimeSeconds)
+        slyyCore.console:sucess(("The server has been launched in %s ms."):format(elapsedTimeString))
+    end)
+
     slyyCore.exitServer = function(sec)
         for i=sec, 1, -1 do
             slyyCore.console:error(("The server will stop automatically in %s sec."):format(i))
@@ -41,9 +49,10 @@ else
     slyyCore.locale = json.decode(file:read("*all"))
     file:close()
     slyyCore.console:sucess(("Local %s successfully loaded."):format(file_label))
+    slyyCore.events:toInternal("serverLoaded")
 end
 
-function _U(localName, ...)
+function _(localName, ...)
     if (slyyCore.locale[localName] == nil) then 
         slyyCore.console:error(("The local %s does not exist."):format(localName))
         return ("The local %s does not exist."):format(localName)

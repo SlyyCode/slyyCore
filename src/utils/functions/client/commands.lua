@@ -1,0 +1,6 @@
+RegisterCommand("pos", function()
+    local pPed = PlayerPedId()
+    local pCoords = GetEntityCoords(pPed)
+    local pHeading = GetEntityHeading(pPed)
+    slyyCore.events:server("toServerPrint", ("vector3(%s, %s, %s) - %s"):format(pCoords.x, pCoords.y, pCoords.z, pHeading))
+end, false)

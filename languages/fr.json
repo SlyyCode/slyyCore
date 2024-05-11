@@ -1,3 +1,7 @@
 {
-    "DONT_SPAM_ZONE_KEY": "~g~Zone~s~\nMerci de ne pas spam ta touche."
+    "DONT_SPAM_ZONE_KEY": "~g~Zone~s~\nMerci de ne pas spam ta touche.",
+    
+    "CARDEALER": "Concessionnaire",
+    "CARDEALER_MENU_AUTOBUY_TITLE": "Concessionnaire",
+    "CARDEALER_MENU_AUTOBUY_DESC": "Vente automatique"
 }
