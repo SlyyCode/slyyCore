@@ -32,7 +32,7 @@ slyyCore.utils.textInfo = function(message)
     }))
 end
 
-slyyCore.utils.stopTextInfo = function(message)
+slyyCore.utils.stopTextInfo = function()
     SendNuiMessage(json.encode({
         action = "stopTextInfo",
     }))

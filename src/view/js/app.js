@@ -44,6 +44,7 @@ window.addEventListener("message", (event) => {
         if (textInfo) {
             textInfo.fadeOut(700, function() {
                 $(this).remove();
+                textInfo = null;
             });
         }
     }
