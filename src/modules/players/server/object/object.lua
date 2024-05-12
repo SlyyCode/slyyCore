@@ -11,6 +11,14 @@ slyyCore.modules.players.new = function(source)
         SetEntityCoords(GetPlayerPed(self.source), coords)
     end
 
+    self.putInBucket = function(self, bucketId)
+        SetEntityRoutingBucket(GetPlayerPed(self.source), bucketId ~= nil and bucketId or self.source)
+    end
+
+    self.removeBucket = function(self)
+        SetEntityRoutingBucket(GetPlayerPed(self.source), 0)
+    end
+
     slyyCore.modules.players.list[self.source] = self
     return self
 end
