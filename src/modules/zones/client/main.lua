@@ -17,7 +17,7 @@ end)
 CreateThread(function()
     while true do 
         local interval = 500
-        local pCoords = GetEntityCoords(slyyCore.pPed)
+        local pCoords = GetEntityCoords(PlayerPedId())
 
         if not slyyCore.inMenu then
             for k,v in pairs(slyyCore.modules.zones.list) do 

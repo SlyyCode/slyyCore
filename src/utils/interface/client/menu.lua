@@ -22,7 +22,7 @@ slyyCore.openRUI = function(data, checkCoords)
     slyyCore.inMenu = true
 
     while menu do
-        if checkCoords ~= nil and #(GetEntityCoords(slyyCore.pPed) - checkCoords.coords) > checkCoords.dist and slyyCore.inMenu then 
+        if checkCoords ~= nil and #(GetEntityCoords(PlayerPedId()) - checkCoords.coords) > checkCoords.dist and slyyCore.inMenu then 
             slyyCore.utils.notification(_("TOO_FAR_AWAY"))
             RageUI.CloseAll()
         end
@@ -31,6 +31,9 @@ slyyCore.openRUI = function(data, checkCoords)
         RageUI.IsVisible(menu, function()
             data.actions["menu"](submenus)
         end, function()
+            if data.panels ~= nil and data.panels["menu"] ~= nil then
+                data.panels["menu"](submenus)
+            end
         end)
 
         if #submenus > 0 then
@@ -38,6 +41,9 @@ slyyCore.openRUI = function(data, checkCoords)
                 RageUI.IsVisible(v, function()
                     data.actions[k](submenus)
                 end, function()
+                    if data.panels ~= nil and data.panels[k] ~= nil then
+                        data.panels[k](submenus)
+                    end
                 end)
             end
         end

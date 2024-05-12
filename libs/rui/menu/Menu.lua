@@ -35,7 +35,7 @@ function RageUI.CreateMenu(Title, Subtitle, X, Y, TextureDictionary, TextureName
 
     Menu.Title = Title or ""
     Menu.TitleFont = 6
-    Menu.TitleScale = 1.0
+    Menu.TitleScale = 1.2
     Menu.Subtitle = string.upper(Subtitle) or nil
     Menu.SubtitleHeight = -37
     Menu.Description = nil
@@ -43,7 +43,7 @@ function RageUI.CreateMenu(Title, Subtitle, X, Y, TextureDictionary, TextureName
     Menu.X = X or 0
     Menu.Y = Y or 0
     Menu.Parent = nil
-    Menu.WidthOffset = RageUI.UI.Style[RageUI.UI.Current].Width
+    Menu.WidthOffset = 99
     Menu.Open = false
     Menu.Controls = RageUI.Settings.Controls
     Menu.Index = 1

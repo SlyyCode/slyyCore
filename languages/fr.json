@@ -1,9 +1,26 @@
 {
     "DONT_SPAM_ZONE_KEY": "~g~Zone~s~\nMerci de ne pas spam ta touche.",
     "TOO_FAR_AWAY": "~r~Zone~s~\nVous vous êtes trop éloigné(e).",
-
+    "MENU_ACTION": "→→→",
+        
     "CARDEALER": "Concessionnaire",
+    "CARDEALER_HELPTEXT_AUTOBUY": "Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le catalogue.",
     "CARDEALER_MENU_AUTOBUY_TITLE": "Concessionnaire",
     "CARDEALER_MENU_AUTOBUY_DESC": "Vente automatique",
-    "CARDEALER_HELPTEXT_AUTOBUY": "Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le catalogue."
+    "CARDEALER_MENU_AUTOBUY_DETAIL_DESC": "Détails du véhicule",
+    "CARDEALER_MENU_CATEGORIE_CHOICE": "Quel catégorie de véhicule ?",
+    "CARDEALER_MENU_CATEGORIE_CHOICE_DESC": "Que catégorie de véhicule voulez-vous choisir ?",
+    "CARDEALER_MENU_CATEGORIE_SEPARATOR": "↓ ~b~%s~s~ ↓",
+    "CARDEALER_MENU_VEHICLE_SELECT": "~b~Détails~s~ →→→",
+    "CARDEALER_MENU_VEHICLE_DETAIL_LOADING": "~b~Chargement ...~s~",
+    "CARDEALER_MENU_VEHICLE_DETAIL_NAME": "Nom du véhicule",
+    "CARDEALER_MENU_VEHICLE_DETAIL_CATEGORIE": "Catégorie du véhicule",
+    "CARDEALER_MENU_VEHICLE_DETAIL_MAXSEATS": "Nombre de place(s)",
+    "CARDEALER_MENU_VEHICLE_DETAIL_PRICE": "Prix du véhicule",
+    "CARDEALER_MENU_VEHICLE_DETAIL_ACCELERATION": "Accélération",
+    "CARDEALER_MENU_VEHICLE_DETAIL_BREAKE": "Frein",
+    "CARDEALER_MENU_VEHICLE_DETAIL_AGILITY": "Agilité",
+    "CARDEALER_MENU_VEHICLE_DETAIL_TRACTION": "Traction",
+    "CARDEALER_MENU_VEHICLE_ACTION_SEPARATOR": "↓ ~b~Actionss~s~ ↓",
+    "CARDEALER_MENU_VEHICLE_ACTION_TRY": "Essayer le véhicule"
 }
