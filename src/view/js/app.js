@@ -9,7 +9,6 @@ const types = {
         ["icon"]: "info",
     },
 };
-
 const codes = {
     "~r~": "red",
     "~b~": "#378cbf",
@@ -21,13 +20,33 @@ const codes = {
     "~u~": "black",
     "~o~": "orange",
 };
+let textInfo;
 
 window.addEventListener("message", (event) => {
-    notification({
-        type: event.data.type,
-        message: event.data.message,
-        length: event.data.length,
-    });
+    if (event.data.action == "notification") {
+        notification({
+            type: event.data.type,
+            message: event.data.message,
+            length: event.data.length,
+        });
+    } else if (event.data.action == "textInfo") {
+        if (!textInfo) {
+            textInfo = $(`
+                <div class="notify info">
+                    <div class="innerText">
+                        <p class="text"></p>
+                    </div>
+                </div>
+            `).appendTo(`#root`);
+        }
+        textInfo.find('.text').text(event.data.message);
+    } else if (event.data.action == "stopTextInfo") {
+        if (textInfo) {
+            textInfo.fadeOut(700, function() {
+                $(this).remove();
+            });
+        }
+    }
 });
 
 const replaceColors = (str, obj) => {

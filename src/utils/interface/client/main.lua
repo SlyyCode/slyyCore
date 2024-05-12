@@ -24,3 +24,16 @@ slyyCore.utils.helpNotification = function(message, thisFrame, beep, duration)
         EndTextCommandDisplayHelp(0, false, beep, duration or -1)
     end
 end
+
+slyyCore.utils.textInfo = function(message)
+    SendNuiMessage(json.encode({
+        action = "textInfo",
+        message = message,
+    }))
+end
+
+slyyCore.utils.stopTextInfo = function(message)
+    SendNuiMessage(json.encode({
+        action = "stopTextInfo",
+    }))
+end
