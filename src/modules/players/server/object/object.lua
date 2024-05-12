@@ -19,6 +19,11 @@ slyyCore.modules.players.new = function(source)
         SetEntityRoutingBucket(GetPlayerPed(self.source), 0)
     end
 
+    self.getBucket = function(self)
+        return GetEntityRoutingBucket(GetPlayerPed(self.source))
+    end
+
+    self:removeBucket()
     slyyCore.modules.players.list[self.source] = self
     return self
 end
