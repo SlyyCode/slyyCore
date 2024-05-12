@@ -47,6 +47,12 @@ body {
     width: 100%;
 }
 
+#root .innerText .text {
+    white-space: pre-line;
+    display: flex;
+    justify-content: center;
+}
+
 #root .icon {
     float: left;
     color: #fff;
