@@ -30,5 +30,9 @@ slyyCore.modules.vehicles.new = function(model)
         SetVehicleNumberPlateText(self.entity, plate)
     end
 
+    self.warpPlayer = function(self, source, seat)
+        TaskWarpPedIntoVehicle(GetPlayerPed(source), self.entity, seat)
+    end
+
     return self
 end

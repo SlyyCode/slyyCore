@@ -41,3 +41,15 @@ server_scripts {
     -- Addons
     "addons/**/server/*.lua",
 }
+
+ui_page {
+	"src/view/ui.html"
+}
+
+files {
+	"src/view/ui.html",
+	"src/view/js/*.js",
+
+    "public/css/*.css",
+	"public/fonts/*.ttf",
+}
