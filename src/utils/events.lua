@@ -22,6 +22,6 @@ function slyyCore.events:basic(eventName, handler)
     AddEventHandler(eventName, handler)
 end
 
-function slyyCore.events:toInternal(eventName, ...)
+function slyyCore.events:internal(eventName, ...)
     TriggerEvent(slyyCore.events:getHash(eventName), ...)
 end

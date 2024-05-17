@@ -23,6 +23,18 @@ slyyCore.modules.players.new = function(source)
         return GetEntityRoutingBucket(GetPlayerPed(self.source))
     end
 
+    self.addAccountMoney = function(self, account, amount)
+
+    end
+
+    self.removeAccountMoney = function(self, account, amount)
+
+    end
+
+    self.getAccountMoney = function(self, account)
+        
+    end
+
     self:removeBucket()
     slyyCore.modules.players.list[self.source] = self
     return self

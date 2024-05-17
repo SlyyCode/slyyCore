@@ -62,7 +62,7 @@ else
     slyyCore.locale = json.decode(file:read("*all"))
     file:close()
     slyyCore.console:sucess(("Local %s successfully loaded."):format(file_label))
-    slyyCore.events:toInternal("serverLoaded")
+    slyyCore.events:internal("serverLoaded")
 
     slyyCore.events:handler("onPlayerJoinded", function()
         slyyCore.events:client("locales:receive", source, slyyCore.locale)
