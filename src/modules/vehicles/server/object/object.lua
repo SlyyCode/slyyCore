@@ -33,6 +33,23 @@ slyyCore.modules.vehicles.new = function(model)
     self.warpPlayer = function(self, source, seat)
         TaskWarpPedIntoVehicle(GetPlayerPed(source), self.entity, seat)
     end
+    
+    self.getEntity = function(self)
+        return self.entity
+    end
+
+    self.delete = function()
+        if self.entity then
+            slyyCore.modules.vehicles.list[self.entity] = nil
+            
+            while DoesEntityExist(self.entity) do 
+                DeleteEntity(self.entity)
+                Wait(1)
+            end
+            
+            print("Delet")
+        end
+    end
 
     return self
 end
