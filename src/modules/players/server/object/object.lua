@@ -32,7 +32,7 @@ slyyCore.modules.players.new = function(source)
     end
 
     self.getAccountMoney = function(self, account)
-        
+        return true
     end
 
     self:removeBucket()

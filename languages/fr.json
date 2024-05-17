@@ -10,7 +10,8 @@
     "PAYMENT_METHOD_TRANSAC": "~b~Transaction :~s~ %s",
     "PAYMENT_METHOD_TRANSAC_AMOUNT": "~b~Montant :~s~ %s$",
     "PAYMENT_METHOD_PAY_WITH": "Payer par %s",
-    "PAYMENT_METHOD_NOT_ENOUGH_MONEY": "~r~Méthode de paiement~s~\nVous n'avez pas assez d'argent.",
+    "PAYMENT_METHOD_SUCCESS": "~g~Transaction~s~\nVous avez payé %s$.",
+    "PAYMENT_METHOD_NOT_ENOUGH_MONEY": "~r~Transaction~s~\nVous n'avez pas assez d'argent.",
 
     "CARDEALER": "Concessionnaire",
     "CARDEALER_HELPTEXT_AUTOBUY": "Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le catalogue.",

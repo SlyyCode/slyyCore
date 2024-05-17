@@ -9,8 +9,17 @@ slyyCore.events:new("payment_method:pay", function(method, transaction, action, 
     local player = slyyCore.modules.players.list[_source]
 
     if player:getAccountMoney(method, transaction.amount) then 
+        player:removeAccountMoney(method, transaction.amount)
+        slyyCore.utils.notification(_source, _("PAYMENT_METHOD_SUCCESS", slyyCore.utils.groupDigits(transaction.amount)))
 
+        if action.accpeted ~= nil then
+            slyyCore.events:internal(action.accpeted, _source, ...)
+        end
     else 
-        slyyCore.utils.notification(_source, "")
+        slyyCore.utils.notification(_source, _("PAYMENT_METHOD_NOT_ENOUGH_MONEY"))
+
+        if action.refused ~= nil then
+            slyyCore.events:internal(action.refused, _source, ...)
+        end
     end 
 end)
