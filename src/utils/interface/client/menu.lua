@@ -61,3 +61,11 @@ slyyCore.openRUI = function(data, checkCoords)
         end
     end
 end
+
+slyyCore.closeRUI = function()
+    RageUI.CloseAll()
+end
+
+slyyCore.events:new("closeRUI", function()
+    slyyCore.closeRUI()
+end)
