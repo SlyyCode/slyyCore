@@ -12,3 +12,11 @@ slyyCore.utils.groupDigits = function(value)
     end
     return left..formattedNum..right
 end
+
+slyyCore.utils.sizeOf = function(t)
+    local size = 0
+    for _,_ in pairs(t) do 
+        size += 1
+    end
+    return size
+end
