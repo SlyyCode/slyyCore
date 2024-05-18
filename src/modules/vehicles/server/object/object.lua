@@ -1,5 +1,12 @@
 slyyCore.modules.vehicles.list = {}
 
+local function getRandomId()
+    for id,_ in pairs(slyyCore.modules.players.list) do 
+        return id 
+    end
+    return false
+end
+
 --@type: automobile, bike, boat, heli, plane, submarine, trailer, train
 
 slyyCore.modules.vehicles.new = function(model)
@@ -22,12 +29,12 @@ slyyCore.modules.vehicles.new = function(model)
         end
     end
 
-    self.setProperties = function(self, properties)
-        --@SlyyCode: faire le setProperties client side
+    self.setProperties = function(self, properties, source)
+        slyyCore.events:client("vehicles:setProperties", source or getRandomId(), self.netId, properties)
     end
 
     self.setColours = function(self, colorPrimary, colorSecondary)
-        --@SlyyCode: faire le setColours client side
+        slyyCore.events:client("vehicles:setColours", source or getRandomId(), self.netId, colorPrimary, colorSecondary)
     end
 
     self.setPlate = function(self, plate)
