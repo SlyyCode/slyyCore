@@ -8,3 +8,6 @@ Config.ServerColor = {
     B = 255,
     A = 255
 }
+Config.BanAction = function(source, identifiers, reason)
+    print(("Ban %s (%s) [%s] for %s."):format(GetPlayerName(source), source, identifiers["license"], reason))
+end
