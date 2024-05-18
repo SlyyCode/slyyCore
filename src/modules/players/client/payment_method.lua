@@ -14,11 +14,13 @@ slyyCore.events:new("payment_method:request", function(transaction, action, ...)
                 RageUI.Separator(_("PAYMENT_METHOD_TRANSAC_AMOUNT", slyyCore.utils.groupDigits(transaction.amount)))
                 RageUI.Button(_("PAYMENT_METHOD_PAY_WITH", _("CASH"):lower()), nil, _("MENU_ACTION"), true, {
                     onSelected = function()
+                        slyyCore.closeRUI()
                         slyyCore.events:server("payment_method:pay", "money", transaction, action, table.unpack(args))
                     end
                 })
                 RageUI.Button(_("PAYMENT_METHOD_PAY_WITH", _("BANK"):lower()), nil, _("MENU_ACTION"), true, {
                     onSelected = function()
+                        slyyCore.closeRUI()
                         slyyCore.events:server("payment_method:pay", "bank", transaction, action, table.unpack(args))
                     end
                 })

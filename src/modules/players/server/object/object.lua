@@ -5,7 +5,12 @@ slyyCore.modules.players.new = function(source)
 
     self.source = source 
     self.name = GetPlayerName(self.source)
+    self.rp_name = "Player RolePlay Name"
     self.identifiers = slyyCore.utils.getIdentifiers(self.source)
+
+    self.getRpName = function(self)
+        return self.rp_name
+    end
 
     self.setCoords = function(self, coords)
         SetEntityCoords(GetPlayerPed(self.source), coords)

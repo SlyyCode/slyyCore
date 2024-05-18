@@ -58,8 +58,6 @@ slyyCore.modules.vehicles.new = function(model)
                 DeleteEntity(self.entity)
                 Wait(1)
             end
-            
-            print("Delet")
         end
     end
 
