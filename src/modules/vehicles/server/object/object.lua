@@ -23,7 +23,11 @@ slyyCore.modules.vehicles.new = function(model)
     end
 
     self.setProperties = function(self, properties)
-        --@SlyyCode: faire le set properties client side
+        --@SlyyCode: faire le setProperties client side
+    end
+
+    self.setColours = function(self, colorPrimary, colorSecondary)
+        --@SlyyCode: faire le setColours client side
     end
 
     self.setPlate = function(self, plate)
