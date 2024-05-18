@@ -4,6 +4,7 @@
     "MENU_ACTION": "→→→",
     "CASH": "Liquide",
     "BANK": "Banque",
+    "CANCEL": "Annuler",
     
     "PAYMENT_METHOD_TITLE": "Moyen de paiement",
     "PAYMENT_METHOD_DESC": "Quel moyen de paiement ?",
@@ -12,6 +13,7 @@
     "PAYMENT_METHOD_PAY_WITH": "Payer par %s",
     "PAYMENT_METHOD_SUCCESS": "~g~Transaction~s~\nVous avez payé %s$.",
     "PAYMENT_METHOD_NOT_ENOUGH_MONEY": "~r~Transaction~s~\nVous n'avez pas assez d'argent.",
+    "PAYMENT_METHOD_CANCEL": "~g~Transaction~s~\nVous avez annuler la transaction.",
     "PAYMENT_METHOD_REFUND": "~g~Transaction~s~\nVous avez été remboursé(e).",
 
     "CARDEALER": "Concessionnaire",

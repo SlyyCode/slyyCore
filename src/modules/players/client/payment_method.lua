@@ -24,6 +24,12 @@ slyyCore.events:new("payment_method:request", function(transaction, action, ...)
                         slyyCore.events:server("payment_method:pay", "bank", transaction, action, table.unpack(args))
                     end
                 })
+                RageUI.Button(_("CANCEL"), nil, _("MENU_ACTION"), true, {
+                    onSelected = function()
+                        slyyCore.closeRUI()
+                        slyyCore.events:server("payment_method:pay", nil, transaction, action, table.unpack(args))
+                    end
+                })
             end
         },
         panels = {},
