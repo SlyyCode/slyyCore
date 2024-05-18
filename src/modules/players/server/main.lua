@@ -4,6 +4,52 @@ slyyCore.events:new("onPlayerJoinded", function()
     slyyCore.modules.players.new(source)
 end)
 
+slyyCore.events:basic("esx:setJob", function(source, newJob, lastJob)
+    local _source = source 
+    local player = slyyCore.modules.players.list[_source]
+    player:setJob(newJob)
+
+    if newJob.name == lastJob.name then 
+        if lastJob.grade_name == "boss" and newJob.grade_name ~= "boss" then
+            for k,v in pairs(player.myZones) do 
+                if v.boss then 
+                    v.removeAuthorized(_source)
+                    slyyCore.events:client("zones:remove", _source, v.id)
+                    break
+                end
+            end
+        end
+        if lastJob.grade_name ~= "boss" and newJob.grade_name == "boss" then
+            for k,v in pairs(slyyCore.modules.zones.list) do 
+                if v.authorization ~= nil and v.authorization == newJob.name and v.boss then 
+                    v.addAuthorized(_source)
+                    slyyCore.events:client("zones:new", _source, v)
+                    break
+                end
+            end
+        end
+    else
+        for k,v in pairs(slyyCore.modules.zones.list) do 
+            if v.authorization ~= nil and v.authorization == lastJob.name then 
+                v.removeAuthorized(_source)
+                slyyCore.events:client("zones:remove", _source, v.id)
+            end
+            if v.authorization ~= nil and v.authorization == newJob.name then 
+                if not v.boss then
+                    v.addAuthorized(_source)
+                    slyyCore.events:client("zones:new", _source, v)
+                else 
+                    if newJob.grade_name == "boss" then 
+                        v.addAuthorized(_source)
+                        slyyCore.events:client("zones:new", _source, v)
+                    end
+                end
+            end
+        end
+
+    end
+end)
+
 slyyCore.events:new("payment_method:pay", function(method, transaction, action, ...)
     local _source = source
     local player = slyyCore.modules.players.list[_source]

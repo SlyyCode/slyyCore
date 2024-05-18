@@ -1,6 +1,6 @@
 slyyCore.modules.zones.list = {}
 
-slyyCore.modules.zones.new = function(position, marker, helpText, dist, onInteract, public, baseAuthorized)
+slyyCore.modules.zones.new = function(position, marker, helpText, dist, onInteract, public, baseAuthorized, authorization, boss)
     local self = setmetatable({}, slyyCore.modules.zones.list)
 
     self.id = #slyyCore.modules.zones.list + 1
@@ -22,14 +22,29 @@ slyyCore.modules.zones.new = function(position, marker, helpText, dist, onIntera
     end
     self.public = public
     self.authorized = baseAuthorized or {}
+    self.authorization = authorization
+    self.boss = boss
 
     self.isAuthorized = function(source)
-        for k,v in pairs(self.authorized) do 
+        for k,v in pairs(self.authorized) do
             if source == v then 
                 return true
             end
         end
         return false
+    end
+
+    self.addAuthorized = function(source)
+        table.insert(self.authorized, source)
+    end
+
+    self.removeAuthorized = function(source)
+        for k,v in pairs(self.authorized) do 
+            if v == source then 
+                table.remove(self.authorized, k)
+                break
+            end
+        end
     end
 
     slyyCore.modules.zones.list[self.id] = self

@@ -7,8 +7,8 @@ slyyCore.modules.zones.createPublic = function(position, marker, helpText, dist,
     return zone.id
 end
 
-slyyCore.modules.zones.createPrivate = function(position, marker, helpText, dist, onInteract, baseAuthorized)
-    local zone = slyyCore.modules.zones.new(position, marker, helpText, dist, onInteract, false, baseAuthorized)
+slyyCore.modules.zones.createPrivate = function(position, marker, helpText, dist, onInteract, baseAuthorized, authorization, boss)
+    local zone = slyyCore.modules.zones.new(position, marker, helpText, dist, onInteract, false, baseAuthorized, authorization, boss)
     for k,v in pairs(slyyCore.modules.players.list) do 
         if zone.isAuthorized(v.source) then
             slyyCore.events:client("zones:new", v.source, zone)
@@ -16,6 +16,21 @@ slyyCore.modules.zones.createPrivate = function(position, marker, helpText, dist
     end
     slyyCore.console:debug(("Created new private zone (zoneId:%s)"):format(zone.id))
     return zone.id
+end
+
+slyyCore.modules.zones.getMyZones = function(source)
+    local zones = {}
+
+    for k,v in pairs(slyyCore.modules.zones.list) do 
+        if v.public then 
+            table.insert(zones, v)
+        else
+            if v.isAuthorized(source) then 
+                table.insert(zones, v)
+            end
+        end
+    end
+    return zones
 end
 
 -- RegisterCommand("test", function()
@@ -39,7 +54,7 @@ end
 --         rotate = true
 --     }, "Appuyez ici pour intéragir", {draw = 10, interact = 2}, function(source)
 --         print("test")
---     end, {1})
+--     end, {1}, "ambulance")
 -- end, false)
 
 slyyCore.events:new("zones:interact", function(zoneId)
@@ -52,6 +67,6 @@ slyyCore.events:basic("zones:interact", function(zoneId)
     slyyCore.modules.zones.list[zoneId].onInteract(source)
 end)
 
-slyyCore.events:new("onPlayerJoinded", function()
-    slyyCore.events:client("zones:receiveZones", source, slyyCore.modules.zones.list)
-end)
+-- slyyCore.events:new("onPlayerJoinded", function()
+--     slyyCore.events:client("zones:receiveZones", source, slyyCore.modules.zones.list)
+-- end)

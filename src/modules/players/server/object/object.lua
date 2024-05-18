@@ -3,10 +3,31 @@ slyyCore.modules.players.list = {}
 slyyCore.modules.players.new = function(source)
     local self = setmetatable({}, slyyCore.modules.players.list)
 
+    self.frameworkPlayer = slyyCore.modules.framework.GetPlayerFromId(source)
     self.source = source 
+    self.job = self.frameworkPlayer.job
     self.name = GetPlayerName(self.source)
     self.rp_name = "Player RolePlay Name"
     self.identifiers = slyyCore.utils.getIdentifiers(self.source)
+    self.myZones = {}
+
+    self.initZones = function()
+        for k,v in pairs(slyyCore.modules.zones.list) do 
+            if self.job.name == v.authorization then 
+                v.addAuthorized(self.source)
+            end
+        end
+        self:updateZone()
+        slyyCore.events:client("zones:receiveZones", source, self.myZones)
+    end
+
+    self.updateZone = function()
+        self.myZones = slyyCore.modules.zones.getMyZones(self.source)
+    end
+
+    self.setJob = function(newJob)
+        self.job = newJob
+    end
 
     self.getRpName = function(self)
         return self.rp_name
@@ -40,7 +61,9 @@ slyyCore.modules.players.new = function(source)
         return true
     end
 
+    
     self:removeBucket()
+    self:initZones()
     slyyCore.modules.players.list[self.source] = self
     return self
 end
