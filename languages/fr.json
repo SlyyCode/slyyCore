@@ -18,10 +18,14 @@
 
     "CARDEALER": "Concessionnaire",
     "CARDEALER_HELPTEXT_AUTOBUY": "Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le catalogue.",
+    "CARDEALER_HELPTEXT_ACTION": "Appuyez sur ~INPUT_CONTEXT~ pour intéragir.",
     "CARDEALER_BAN_MESSAGE_BUY_UNSALEABLE_VEHICLE": "Vous avez essayé d'acheter un véhicule (%s) qui n'est pas vendable par le concessionnaire.",
     "CARDEALER_MENU_AUTOBUY_TITLE": "Concessionnaire",
     "CARDEALER_MENU_AUTOBUY_DESC": "Vente automatique",
     "CARDEALER_MENU_AUTOBUY_DETAIL_DESC": "Détails du véhicule",
+    "CARDEALER_MENU_ACTION_TITLE": "Concessionnaire",
+    "CARDEALER_MENU_ACTION_DESC": "Liste des véhicules vendables",
+    "CARDEALER_MENU_ACTION_DETAIL_DESC": "Détails du véhicule",
     "CARDEALER_MENU_CATEGORIE_CHOICE": "Quel catégorie de véhicule ?",
     "CARDEALER_MENU_CATEGORIE_CHOICE_DESC": "Que catégorie de véhicule voulez-vous choisir ?",
     "CARDEALER_MENU_CATEGORIE_SEPARATOR": "↓ ~b~%s~s~ ↓",
@@ -39,6 +43,8 @@
     "CARDEALER_MENU_VEHICLE_ACTION_TRY": "Essayer le véhicule",
     "CARDEALER_MENU_VEHICLE_ACTION_CHOICE_COLOUR": "Choix de la couleur",
     "CARDEALER_MENU_VEHICLE_BUY": "Acheter ce véhicule",
+    "CARDEALER_MENU_TRY_ON_ME": "À moi",
+    "CARDEALER_MENU_TRY_ON_PLAYER": "À un individu",
     "CARDEALER_NOTIF_VEHICLE_TRY_MESSAGE": "Il vous reste %s seconde.\nAppuyez sur ESPACE pour arrêter.",
     "CARDEALER_NOTIF_BULK_ZONE": "~r~Erreur~s~\nLa zone est encombrée.",
     "CARDEALER_NOTIF_NEW_VEHICLE": "~g~Concessionnaire~s~\nVous avez un nouveau véhicule : %s."
