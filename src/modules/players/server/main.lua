@@ -13,13 +13,13 @@ slyyCore.events:new("payment_method:pay", function(method, transaction, action, 
         slyyCore.utils.notification(_source, _("PAYMENT_METHOD_SUCCESS", slyyCore.utils.groupDigits(transaction.amount)))
 
         if action.accpeted ~= nil then
-            slyyCore.events:internal(action.accpeted, _source, ...)
+            slyyCore.events:internal(action.accpeted, _source, method, ...)
         end
     else 
         slyyCore.utils.notification(_source, _("PAYMENT_METHOD_NOT_ENOUGH_MONEY"))
 
         if action.refused ~= nil then
-            slyyCore.events:internal(action.refused, _source, ...)
+            slyyCore.events:internal(action.refused, _source, method, ...)
         end
     end 
 end)
