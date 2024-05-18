@@ -20,6 +20,7 @@
     "CARDEALER_HELPTEXT_AUTOBUY": "Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le catalogue.",
     "CARDEALER_HELPTEXT_ACTION": "Appuyez sur ~INPUT_CONTEXT~ pour intéragir.",
     "CARDEALER_BAN_MESSAGE_BUY_UNSALEABLE_VEHICLE": "Vous avez essayé d'acheter un véhicule (%s) qui n'est pas vendable par le concessionnaire.",
+    "CARDEALER_BAN_MESSAGE_ATTEMPT_TEST_VEHICLE": "Vous avez essayé de testé un véhicule alors que vous n'êtes pas concessionnaire.",
     "CARDEALER_MENU_AUTOBUY_TITLE": "Concessionnaire",
     "CARDEALER_MENU_AUTOBUY_DESC": "Vente automatique",
     "CARDEALER_MENU_AUTOBUY_DETAIL_DESC": "Détails du véhicule",
