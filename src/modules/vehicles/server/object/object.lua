@@ -37,7 +37,15 @@ slyyCore.modules.vehicles.new = function(model)
     self.warpPlayer = function(self, source, seat)
         TaskWarpPedIntoVehicle(GetPlayerPed(source), self.entity, seat)
     end
-    
+
+    self.lock = function(self)
+        SetVehicleDoorsLocked(self.entity, 2)
+    end
+
+    self.unlock = function(self)
+        SetVehicleDoorsLocked(self.entity, 1)
+    end
+
     self.getEntity = function(self)
         return self.entity
     end
