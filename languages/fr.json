@@ -12,6 +12,7 @@
     "PAYMENT_METHOD_PAY_WITH": "Payer par %s",
     "PAYMENT_METHOD_SUCCESS": "~g~Transaction~s~\nVous avez payé %s$.",
     "PAYMENT_METHOD_NOT_ENOUGH_MONEY": "~r~Transaction~s~\nVous n'avez pas assez d'argent.",
+    "PAYMENT_METHOD_REFUND": "~g~Transaction~s~\nVous avez été remboursé(e).",
 
     "CARDEALER": "Concessionnaire",
     "CARDEALER_HELPTEXT_AUTOBUY": "Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le catalogue.",
@@ -34,5 +35,6 @@
     "CARDEALER_MENU_VEHICLE_ACTION_SEPARATOR": "↓ ~b~Actionss~s~ ↓",
     "CARDEALER_MENU_VEHICLE_ACTION_TRY": "Essayer le véhicule",
     "CARDEALER_MENU_VEHICLE_ACTION_CHOICE_COLOUR": "Choix de la couleur",
-    "CARDEALER_MENU_VEHICLE_BUY": "Acheter ce véhicule"
+    "CARDEALER_MENU_VEHICLE_BUY": "Acheter ce véhicule",
+    "CARDEALER_NOTIF_BULK_ZONE": "~r~Erreur~s~\nLa zone est encombrée."
 }

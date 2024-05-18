@@ -20,3 +20,18 @@ slyyCore.utils.sizeOf = function(t)
     end
     return size
 end
+
+slyyCore.utils.genPlate = function()
+    local format = ""
+    local characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    for i = 1, 3 do
+        local charIndex = math.random(1, #characters)
+        format = format .. string.sub(characters, charIndex, charIndex)
+    end
+    format = format .. "-"
+    for i = 1, 3 do
+        local charIndex = math.random(1, #characters)
+        format = format .. string.sub(characters, charIndex, charIndex)
+    end
+    return format
+end
