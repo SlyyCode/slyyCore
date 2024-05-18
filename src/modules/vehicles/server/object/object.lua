@@ -33,7 +33,7 @@ slyyCore.modules.vehicles.new = function(model)
         slyyCore.events:client("vehicles:setProperties", source or getRandomId(), self.netId, properties)
     end
 
-    self.setColours = function(self, colorPrimary, colorSecondary)
+    self.setColours = function(self, colorPrimary, colorSecondary, source)
         slyyCore.events:client("vehicles:setColours", source or getRandomId(), self.netId, colorPrimary, colorSecondary)
     end
 
