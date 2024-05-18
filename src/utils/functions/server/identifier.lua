@@ -5,21 +5,21 @@ slyyCore.utils.getIdentifiers = function(source)
         local id = GetPlayerIdentifier(source, i)
 
         if string.find(id, "steam:") then
-            identifiers["steam"] = id
+            identifiers["steam"] = string.sub(id, 7)
         elseif string.find(id, "ip:") then
-            identifiers["ip"] = id
+            identifiers["ip"] = string.sub(id, 4)
         elseif string.find(id, "discord:") then
-            identifiers["discord"] = id
+            identifiers["discord"] = string.sub(id, 9)
         elseif string.find(id, "license:") then
-            identifiers["license"] = id
+            identifiers["license"] = string.sub(id, 9)
         elseif string.find(id, "license2:") then
-            identifiers["license2"] = id
+            identifiers["license2"] = string.sub(id, 10)
         elseif string.find(id, "xbl:") then
-            identifiers["xbl"] = id
+            identifiers["xbl"] = string.sub(id, 5)
         elseif string.find(id, "live:") then
-            identifiers["live"] = id
+            identifiers["live"] = string.sub(id, 6)
         elseif string.find(id, "fivem:") then
-            identifiers["fivem"] = id
+            identifiers["fivem"] = string.sub(id, 7)
         end
     end
     return identifiers

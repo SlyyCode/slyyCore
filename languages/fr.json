@@ -36,5 +36,6 @@
     "CARDEALER_MENU_VEHICLE_ACTION_TRY": "Essayer le véhicule",
     "CARDEALER_MENU_VEHICLE_ACTION_CHOICE_COLOUR": "Choix de la couleur",
     "CARDEALER_MENU_VEHICLE_BUY": "Acheter ce véhicule",
-    "CARDEALER_NOTIF_BULK_ZONE": "~r~Erreur~s~\nLa zone est encombrée."
+    "CARDEALER_NOTIF_BULK_ZONE": "~r~Erreur~s~\nLa zone est encombrée.",
+    "CARDEALER_NOTIF_NEW_VEHICLE": "~g~Concessionnaire~s~\nVous avez un nouveau véhicule : %s."
 }
