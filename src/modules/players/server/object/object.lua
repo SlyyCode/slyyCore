@@ -11,7 +11,7 @@ slyyCore.modules.players.new = function(source)
     self.source = source 
     self.job = self.frameworkPlayer.job
     self.name = GetPlayerName(self.source)
-    self.rp_name = "Player RolePlay Name"
+    self.rp_name = self.frameworkPlayer.name or "Player RolePlay Name"
     self.identifiers = slyyCore.utils.getIdentifiers(self.source)
     self.myZones = {}
 
