@@ -66,6 +66,9 @@ slyyCore.events:new("payment_method:pay", function(method, transaction, action, 
         if player:getAccountMoney(method, transaction.amount) then 
             player:removeAccountMoney(method, transaction.amount)
             slyyCore.utils.notification(_source, _("PAYMENT_METHOD_SUCCESS", slyyCore.utils.groupDigits(transaction.amount)))
+            if transaction.sender then 
+                slyyCore.utils.notification(transaction.sender, _("PAYMENT_METHOD_SUCCESS_SENDER", slyyCore.utils.groupDigits(transaction.amount)))
+            end
 
             if action.accpeted ~= nil then
                 slyyCore.events:internal(action.accpeted, {
@@ -77,6 +80,9 @@ slyyCore.events:new("payment_method:pay", function(method, transaction, action, 
             end
         else 
             slyyCore.utils.notification(_source, _("PAYMENT_METHOD_NOT_ENOUGH_MONEY"))
+            if transaction.sender then 
+                slyyCore.utils.notification(transaction.sender, _("PAYMENT_METHOD_NOT_ENOUGH_MONEY_SENDER"))
+            end
 
             if action.refused ~= nil then
                 slyyCore.events:internal(action.refused, {
@@ -89,6 +95,9 @@ slyyCore.events:new("payment_method:pay", function(method, transaction, action, 
         end 
     else
         slyyCore.utils.notification(_source, _("PAYMENT_METHOD_CANCEL"))
+        if transaction.sender then 
+            slyyCore.utils.notification(transaction.sender, _("PAYMENT_METHOD_CANCEL_SENDER"))
+        end
 
         if action.refused ~= nil then
             slyyCore.events:internal(action.refused, {

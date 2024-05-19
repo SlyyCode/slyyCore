@@ -23,8 +23,11 @@
     "PAYMENT_METHOD_TRANSAC_AMOUNT": "~b~Montant :~s~ %s$",
     "PAYMENT_METHOD_PAY_WITH": "Payer par %s",
     "PAYMENT_METHOD_SUCCESS": "~g~Transaction~s~\nVous avez payé %s$.",
+    "PAYMENT_METHOD_SUCCESS_SENDER": "~g~Transaction~s~\nL'individu a payer %s$.",
     "PAYMENT_METHOD_NOT_ENOUGH_MONEY": "~r~Transaction~s~\nVous n'avez pas assez d'argent.",
-    "PAYMENT_METHOD_CANCEL": "~g~Transaction~s~\nVous avez annuler la transaction.",
+    "PAYMENT_METHOD_NOT_ENOUGH_MONEY_SENDER": "~r~Transaction~s~\nL'individu n'a pas assez d'argent.",
+    "PAYMENT_METHOD_CANCEL": "~r~Transaction~s~\nVous avez annuler la transaction.",
+    "PAYMENT_METHOD_CANCEL_SENDER": "~r~Transaction~s~\nL'individu a annuler la transaction.",
     "PAYMENT_METHOD_REFUND": "~g~Transaction~s~\nVous avez été remboursé(e).",
 
     "CARDEALER": "Concessionnaire",
