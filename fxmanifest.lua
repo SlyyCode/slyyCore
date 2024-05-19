@@ -37,6 +37,8 @@ client_scripts {
 server_scripts {
     "@oxmysql/lib/MySQL.lua",
     --
+    "configuration/webhook.lua",
+    --
     "src/modules/**/server/*.lua",
     "src/utils/**/server/*.lua",
     "src/modules/**/server/object/*.lua",

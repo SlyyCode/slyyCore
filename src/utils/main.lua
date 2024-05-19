@@ -47,3 +47,7 @@ slyyCore.utils.genPlate = function()
     end
     return format
 end
+
+slyyCore.utils.rgbToDecimal = function(r, g, b)
+    return (r * 256^2) + (g * 256) + b
+end
