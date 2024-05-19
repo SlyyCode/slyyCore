@@ -68,5 +68,8 @@
     "CARDEALER_NOTIF_NEW_VEHICLE": "~g~Concessionnaire~s~\nVous avez un nouveau véhicule : %s.",
     "CARDEALER_NOTIF_NO_PLAYERS_NEARBY": "~r~Concessionnaire~s~\nIl y'a personne à côté de vous.",
     "CARDEALER_NOTIF_CANCEL_SALE": "~r~Concessionnaire~s~\nLa vente n'as pas aboutie.",
-    "CARDEALER_NOTIF_PAYMENT_REQUEST_SENT": "~g~Concessionnaire~s~\nLa demande de paiement à été envoyé au client."
+    "CARDEALER_NOTIF_PAYMENT_REQUEST_SENT": "~g~Concessionnaire~s~\nLa demande de paiement à été envoyé au client.",
+    "CARDEALER_LOG_USERNAME": "Concessionnaire",
+    "CARDEALER_LOG_SELL_TITLE": "Vente concessionnaire",
+    "CARDEALER_LOG_SELL_DESC": "→ **Véhicule vendu** : %s (%s)\n→ **Couleur choisis** : %s\n→ **Prix vendu** : %s$\n→ **Moyen de paiement utilisé** : %s"
 }
