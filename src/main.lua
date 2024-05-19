@@ -28,19 +28,19 @@ if not IsDuplicityVersion() then
         end)
     end)
 else 
-    local time = os.time()
-    Wait(50) -- Wait all file load
+    local startTime = os.clock()
+    Wait(50) -- Wait for all files to load
+
     slyyCore.events:new("serverLoaded", function()
-        local elapsedTime = os.time() - time
-        local elapsedTimeSeconds = elapsedTime / 1000000
-        local elapsedTimeString = string.format("%.6f", elapsedTimeSeconds)
+        local elapsedTime = os.clock() - startTime
+        local elapsedTimeMs = elapsedTime * 1000 -- Convert seconds to milliseconds
+        local elapsedTimeString = string.format("%.6f", elapsedTimeMs)
         slyyCore.console:sucess(("The server has been launched in %s ms."):format(elapsedTimeString))
 
         slyyCore.utils.log("main", {
-            username = "Jsuis un test",
-            title = "Test",
-            description = "Description tets",
-            thumbnail_url = Config.ServerIcon,
+            username = _("LOG_SERVER_LOADED_USERNAME"),
+            title = _("LOG_SERVER_LOADED_TITLE"),
+            description = _("LOG_SERVER_LOADED_DESC", elapsedTimeString),
             color = {0, 255, 0}
         })
     end)

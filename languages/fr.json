@@ -13,6 +13,10 @@
     "LOG_UTILS_ID": "ID",
     "LOG_UTILS_TITLE_ADDITIONAL_INFO": "```fix\nInformation additionnelle :```\n",
 
+    "LOG_SERVER_LOADED_USERNAME": "Information serveur",
+    "LOG_SERVER_LOADED_TITLE": "Serveur démarrer",
+    "LOG_SERVER_LOADED_DESC": "Le serveur a été lancé en %s ms.",
+
     "PAYMENT_METHOD_TITLE": "Moyen de paiement",
     "PAYMENT_METHOD_DESC": "Quel moyen de paiement ?",
     "PAYMENT_METHOD_TRANSAC": "~b~Transaction :~s~ %s",
