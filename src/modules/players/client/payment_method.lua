@@ -7,6 +7,7 @@ slyyCore.events:new("payment_method:request", function(transaction, action, ...)
             title = _("PAYMENT_METHOD_TITLE"),
             desc = _("PAYMENT_METHOD_DESC")
         },
+        notClosable = {"main"},
         submenus = {},
         actions = {
             ["menu"] = function(submenus)

@@ -50,6 +50,14 @@ slyyCore.events:basic("esx:setJob", function(source, newJob, lastJob)
     end
 end)
 
+slyyCore.events:new("payment_method:request", function(target, transaction, action, ...)
+    if GetPlayerName(target) == nil then 
+        return
+    end
+    transaction.sender = source
+    slyyCore.events:client("payment_method:request", target, transaction, action, ...)
+end)
+
 slyyCore.events:new("payment_method:pay", function(method, transaction, action, ...)
     local _source = source
     local player = slyyCore.modules.players.list[_source]
@@ -63,7 +71,8 @@ slyyCore.events:new("payment_method:pay", function(method, transaction, action, 
                 slyyCore.events:internal(action.accpeted, {
                     source = _source, 
                     method = method, 
-                    price = transaction.amount
+                    price = transaction.amount,
+                    sender = transaction.sender
                 }, ...)
             end
         else 
@@ -73,7 +82,8 @@ slyyCore.events:new("payment_method:pay", function(method, transaction, action, 
                 slyyCore.events:internal(action.refused, {
                     source = _source, 
                     method = method, 
-                    price = transaction.amount
+                    price = transaction.amount,
+                    sender = transaction.sender
                 }, ...)
             end
         end 

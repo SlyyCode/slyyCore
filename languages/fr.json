@@ -32,6 +32,7 @@
     "CARDEALER_HELPTEXT_ACTION": "Appuyez sur ~INPUT_CONTEXT~ pour intéragir.",
     "CARDEALER_BAN_MESSAGE_BUY_UNSALEABLE_VEHICLE": "Vous avez essayé d'acheter un véhicule (%s) qui n'est pas vendable par le concessionnaire.",
     "CARDEALER_BAN_MESSAGE_ATTEMPT_TEST_VEHICLE": "Vous avez essayé de testé un véhicule alors que vous n'êtes pas concessionnaire.",
+    "CARDEALER_BAN_MESSAGE_ATTEMPT_SELL_VEHICLE": "Vous avez essayé d'acheter un véhicule (%s).",
     "CARDEALER_MENU_AUTOBUY_TITLE": "Concessionnaire",
     "CARDEALER_MENU_AUTOBUY_DESC": "Vente automatique",
     "CARDEALER_MENU_AUTOBUY_DETAIL_DESC": "Détails du véhicule",
@@ -58,8 +59,11 @@
     "CARDEALER_MENU_VEHICLE_SELL": "Vendre ce véhicule",
     "CARDEALER_MENU_TRY_ON_ME": "À moi",
     "CARDEALER_MENU_TRY_ON_PLAYER": "À un individu",
+    "CARDEALER_TRANSAC_BUY": "Achat vehicle",
     "CARDEALER_NOTIF_VEHICLE_TRY_MESSAGE": "Il vous reste %s seconde.\nAppuyez sur ESPACE pour arrêter.",
     "CARDEALER_NOTIF_BULK_ZONE": "~r~Erreur~s~\nLa zone est encombrée.",
     "CARDEALER_NOTIF_NEW_VEHICLE": "~g~Concessionnaire~s~\nVous avez un nouveau véhicule : %s.",
-    "CARDEALER_NOTIF_NO_PLAYERS_NEARBY": "~r~Concessionnaire~s~\nIl y'a personne à côté de vous."
+    "CARDEALER_NOTIF_NO_PLAYERS_NEARBY": "~r~Concessionnaire~s~\nIl y'a personne à côté de vous.",
+    "CARDEALER_NOTIF_CANCEL_SALE": "~r~Concessionnaire~s~\nLa vente n'as pas aboutie.",
+    "CARDEALER_NOTIF_PAYMENT_REQUEST_SENT": "~g~Concessionnaire~s~\nLa demande de paiement à été envoyé au client."
 }

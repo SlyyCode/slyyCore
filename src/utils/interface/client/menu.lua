@@ -18,6 +18,16 @@ slyyCore.openRUI = function(data, checkCoords)
         submenus[k] = RageUI.CreateSubMenu(menu, v.title, v.desc)
     end
 
+    if data.notClosable then
+        for _,v in pairs(data.notClosable) do 
+            if v == "main" then 
+                menu.Closable = false
+            else
+                submenus[v].Closable = false
+            end
+        end
+    end
+
     RageUI.Visible(menu, not RageUI.Visible(menu))
     slyyCore.inMenu = true
 
