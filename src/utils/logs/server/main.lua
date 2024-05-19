@@ -59,19 +59,19 @@ slyyCore.utils.playerLog = function(webId, data, source, target)
     slyyCore.utils.log(webId, data)
 end
 
-RegisterCommand("log", function()
-    slyyCore.utils.log("main", {
-        username = "Jsuis un test",
-        title = "Test",
-        description = "Description tets",
-        thumbnail_url = Config.ServerIcon,
-        color = {0, 255, 0}
-    })
-    slyyCore.utils.playerLog("main", {
-        username = "Jsuis un test",
-        title = "Test",
-        description = "Description tets",
-        thumbnail_url = Config.ServerIcon,
-        color = {0, 255, 0}
-    }, 2, 2)
-end, false)
+-- RegisterCommand("log", function()
+--     slyyCore.utils.log("main", {
+--         username = "Jsuis un test",
+--         title = "Test",
+--         description = "Description tets",
+--         thumbnail_url = Config.ServerIcon,
+--         color = {0, 255, 0}
+--     })
+--     slyyCore.utils.playerLog("main", {
+--         username = "Jsuis un test",
+--         title = "Test",
+--         description = "Description tets",
+--         thumbnail_url = Config.ServerIcon,
+--         color = {0, 255, 0}
+--     }, 2, 2)
+-- end, false)
