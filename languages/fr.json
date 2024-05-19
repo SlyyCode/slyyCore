@@ -55,9 +55,11 @@
     "CARDEALER_MENU_VEHICLE_ACTION_TRY": "Essayer le véhicule",
     "CARDEALER_MENU_VEHICLE_ACTION_CHOICE_COLOUR": "Choix de la couleur",
     "CARDEALER_MENU_VEHICLE_BUY": "Acheter ce véhicule",
+    "CARDEALER_MENU_VEHICLE_SELL": "Vendre ce véhicule",
     "CARDEALER_MENU_TRY_ON_ME": "À moi",
     "CARDEALER_MENU_TRY_ON_PLAYER": "À un individu",
     "CARDEALER_NOTIF_VEHICLE_TRY_MESSAGE": "Il vous reste %s seconde.\nAppuyez sur ESPACE pour arrêter.",
     "CARDEALER_NOTIF_BULK_ZONE": "~r~Erreur~s~\nLa zone est encombrée.",
-    "CARDEALER_NOTIF_NEW_VEHICLE": "~g~Concessionnaire~s~\nVous avez un nouveau véhicule : %s."
+    "CARDEALER_NOTIF_NEW_VEHICLE": "~g~Concessionnaire~s~\nVous avez un nouveau véhicule : %s.",
+    "CARDEALER_NOTIF_NO_PLAYERS_NEARBY": "~r~Concessionnaire~s~\nIl y'a personne à côté de vous."
 }

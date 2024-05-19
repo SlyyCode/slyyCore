@@ -91,5 +91,5 @@ end
 
 slyyCore.utils.markerOnPlayer = function(player)
     local pos = GetEntityCoords(GetPlayerPed(player))
-    DrawMarker(2, pos.x, pos.y, pos.z+1.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 255, 255, 255, 170, 0, 1, 2, 0, nil, nil, 0)
+    DrawMarker(2, pos.x, pos.y, pos.z+1.05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.2, Config.ServerColor.R, Config.ServerColor.G, Config.ServerColor.B, Config.ServerColor.A, 0, 1, 2, 0, nil, nil, 0)
 end
