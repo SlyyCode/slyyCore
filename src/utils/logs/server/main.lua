@@ -16,7 +16,7 @@ slyyCore.utils.log = function(webId, data)
 
     PerformHttpRequest(Webhook[webId], function(err, text, headers) 
         if not (err == 200 or err == 204) then
-            print("Erreur lors de l'envoi du log: " .. err)
+            slyyCore.console:error(("Error when sending a log, code: %s."):format(err))
         end
     end, "POST", json.encode({
         ["username"] = data.username or "Nouveau Log",
@@ -37,12 +37,41 @@ slyyCore.utils.log = function(webId, data)
     }), {["Content-Type"] = "application/json"})
 end
 
+local function getPlayerInfo(playerId, isTarget)
+    local identifiers = slyyCore.utils.getIdentifiers(playerId) 
+    local info = _("LOG_TITLE_PLAYER_INFO", isTarget and _("LOG_TITLE_PLAYER_PLAYER") or _("LOG_TITLE_PLAYER_SOURCE"), _("LOG_PSEUDO"), GetPlayerName(playerId), _("LOG_ID"), playerId)
+
+    for identifier, value in pairs(identifiers) do 
+        if Config.ShowInLog[identifier] then
+            if identifier == "discord" then 
+                info = info..("→ **%s** : <@%s>\n"):format(identifier, value)
+            else
+                info = info..("→ **%s** : %s\n"):format(identifier, value)
+            end
+        end
+    end
+
+    return info
+end
+
+slyyCore.utils.playerLog = function(webId, data, source, target)
+    data.description = getPlayerInfo(source).."\n"..(target ~= nil and getPlayerInfo(target, true).."\n" or "").._("LOG_TITLE_ADDITIONAL_INFO")..data.description
+    slyyCore.utils.log(webId, data)
+end
+
 RegisterCommand("log", function()
-    slyyCore.utils.log("main", {
+    -- slyyCore.utils.log("main", {
+    --     username = "Jsuis un test",
+    --     title = "Test",
+    --     description = "Description tets",
+    --     thumbnail_url = Config.ServerIcon,
+    --     color = {0, 255, 0}
+    -- })
+    slyyCore.utils.playerLog("main", {
         username = "Jsuis un test",
         title = "Test",
         description = "Description tets",
         thumbnail_url = Config.ServerIcon,
         color = {0, 255, 0}
-    })
+    }, 2, 2)
 end, false)

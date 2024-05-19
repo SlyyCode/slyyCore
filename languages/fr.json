@@ -5,7 +5,14 @@
     "CASH": "Liquide",
     "BANK": "Banque",
     "CANCEL": "Annuler",
-    
+
+    "LOG_TITLE_PLAYER_INFO": "```fix\nInformation sur %s :```\n→ **%s** : %s\n→ **%s** : %s\n",
+    "LOG_TITLE_PLAYER_PLAYER": "le joueur",
+    "LOG_TITLE_PLAYER_SOURCE": "la source",
+    "LOG_PSEUDO": "Pseudo",
+    "LOG_ID": "ID",
+    "LOG_TITLE_ADDITIONAL_INFO": "```fix\nInformation additionnelle :```\n",
+
     "PAYMENT_METHOD_TITLE": "Moyen de paiement",
     "PAYMENT_METHOD_DESC": "Quel moyen de paiement ?",
     "PAYMENT_METHOD_TRANSAC": "~b~Transaction :~s~ %s",
