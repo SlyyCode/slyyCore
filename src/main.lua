@@ -35,6 +35,14 @@ else
         local elapsedTimeSeconds = elapsedTime / 1000000
         local elapsedTimeString = string.format("%.6f", elapsedTimeSeconds)
         slyyCore.console:sucess(("The server has been launched in %s ms."):format(elapsedTimeString))
+
+        slyyCore.utils.log("main", {
+            username = "Jsuis un test",
+            title = "Test",
+            description = "Description tets",
+            thumbnail_url = Config.ServerIcon,
+            color = {0, 255, 0}
+        })
     end)
 
     slyyCore.exitServer = function(sec)

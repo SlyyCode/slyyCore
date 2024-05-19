@@ -39,7 +39,7 @@ end
 
 local function getPlayerInfo(playerId, isTarget)
     local identifiers = slyyCore.utils.getIdentifiers(playerId) 
-    local info = _("LOG_TITLE_PLAYER_INFO", isTarget and _("LOG_TITLE_PLAYER_PLAYER") or _("LOG_TITLE_PLAYER_SOURCE"), _("LOG_PSEUDO"), GetPlayerName(playerId), _("LOG_ID"), playerId)
+    local info = _("LOG_UTILS_TITLE_PLAYER_INFO", isTarget and _("LOG_UTILS_TITLE_PLAYER_PLAYER") or _("LOG_UTILS_TITLE_PLAYER_SOURCE"), _("LOG_UTILS_PSEUDO"), GetPlayerName(playerId), _("LOG_UTILS_ID"), playerId)
 
     for identifier, value in pairs(identifiers) do 
         if Config.ShowInLog[identifier] then
@@ -55,18 +55,18 @@ local function getPlayerInfo(playerId, isTarget)
 end
 
 slyyCore.utils.playerLog = function(webId, data, source, target)
-    data.description = getPlayerInfo(source).."\n"..(target ~= nil and getPlayerInfo(target, true).."\n" or "").._("LOG_TITLE_ADDITIONAL_INFO")..data.description
+    data.description = getPlayerInfo(source).."\n"..(target ~= nil and getPlayerInfo(target, true).."\n" or "").._("LOG_UTILS_TITLE_ADDITIONAL_INFO")..data.description
     slyyCore.utils.log(webId, data)
 end
 
 RegisterCommand("log", function()
-    -- slyyCore.utils.log("main", {
-    --     username = "Jsuis un test",
-    --     title = "Test",
-    --     description = "Description tets",
-    --     thumbnail_url = Config.ServerIcon,
-    --     color = {0, 255, 0}
-    -- })
+    slyyCore.utils.log("main", {
+        username = "Jsuis un test",
+        title = "Test",
+        description = "Description tets",
+        thumbnail_url = Config.ServerIcon,
+        color = {0, 255, 0}
+    })
     slyyCore.utils.playerLog("main", {
         username = "Jsuis un test",
         title = "Test",
