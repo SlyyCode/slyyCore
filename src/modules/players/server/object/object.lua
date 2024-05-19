@@ -3,6 +3,10 @@ slyyCore.modules.players.list = {}
 slyyCore.modules.players.new = function(source)
     local self = setmetatable({}, slyyCore.modules.players.list)
 
+    while slyyCore.modules.framework == nil do -- Check if the framework has loaded
+        Wait(1)
+    end
+
     self.frameworkPlayer = slyyCore.modules.framework.GetPlayerFromId(source)
     self.source = source 
     self.job = self.frameworkPlayer.job
