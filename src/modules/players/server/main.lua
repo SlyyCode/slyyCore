@@ -46,7 +46,6 @@ slyyCore.events:basic("esx:setJob", function(source, newJob, lastJob)
                 end
             end
         end
-
     end
 end)
 
