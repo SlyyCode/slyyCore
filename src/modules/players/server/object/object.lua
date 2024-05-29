@@ -15,7 +15,7 @@ slyyCore.modules.players.new = function(source)
     self.identifiers = slyyCore.utils.getIdentifiers(self.source)
     self.myZones = {}
 
-    self.initZones = function()
+    self.initZones = function(self)
         for k,v in pairs(slyyCore.modules.zones.list) do 
             if self.job.name == v.authorization then 
                 v.addAuthorized(self.source)
@@ -25,11 +25,11 @@ slyyCore.modules.players.new = function(source)
         slyyCore.events:client("zones:receiveZones", source, self.myZones)
     end
 
-    self.updateZone = function()
+    self.updateZone = function(self)
         self.myZones = slyyCore.modules.zones.getMyZones(self.source)
     end
 
-    self.setJob = function(newJob)
+    self.setJob = function(self, newJob)
         self.job = newJob
     end
 

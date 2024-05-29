@@ -3,7 +3,7 @@ slyyCore.modules.players = {}
 slyyCore.events:new("onPlayerJoinded", function()
     slyyCore.modules.players.new(source)
 end)
-
+print(IsDuplicityVersion())
 slyyCore.events:basic("esx:setJob", function(source, newJob, lastJob)
     local _source = source 
     local player = slyyCore.modules.players.list[_source]
