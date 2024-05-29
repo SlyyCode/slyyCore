@@ -10,6 +10,9 @@ end
 slyyCore.modules.zones.createPrivate = function(position, marker, helpText, dist, onInteract, baseAuthorized, authorization, boss)
     local zone = slyyCore.modules.zones.new(position, marker, helpText, dist, onInteract, false, baseAuthorized, authorization, boss)
     for k,v in pairs(slyyCore.modules.players.list) do 
+        if zone.authorization ~= nil and (v.job.name == zone.authorization) then 
+            zone.addAuthorized(v.source)
+        end
         if zone.isAuthorized(v.source) then
             slyyCore.events:client("zones:new", v.source, zone)
         end
@@ -33,29 +36,24 @@ slyyCore.modules.zones.getMyZones = function(source)
     return zones
 end
 
--- RegisterCommand("test", function()
---     slyyCore.modules.zones.createPublic(vector3(169.11, -875.15, 30.45), {
---         id = 0,
---         color = {0, 0, 255, 255},
---         bobUpAndDown = true,
---         faceCamera = false,
---         rotate = true
---     }, "Appuyez ici pour intéragir", {draw = 10, interact = 2}, function(source)
---         print("test")
---     end)
--- end, false)
+slyyCore.modules.zones.doesZoneExist = function(zoneId)
+    return slyyCore.modules.zones.list[zoneId] ~= nil
+end
 
--- RegisterCommand("test2", function()
---     slyyCore.modules.zones.createPrivate(vector3(169.11, -875.15, 30.45), {
---         id = 0,
---         color = {0, 0, 255, 255},
---         bobUpAndDown = true,
---         faceCamera = false,
---         rotate = true
---     }, "Appuyez ici pour intéragir", {draw = 10, interact = 2}, function(source)
---         print("test")
---     end, {1}, "ambulance")
--- end, false)
+slyyCore.modules.zones.deleteZone = function(zoneId)
+    local zone = slyyCore.modules.zones.list[zoneId]
+    if zone == nil then 
+        return 
+    end
+    if zone.public then 
+        slyyCore.events:all("zones:remove", zoneId)
+    else 
+        for k,v in pairs(zone.authorized) do 
+            slyyCore.events:client("zones:remove", v, zoneId)
+        end
+    end
+    slyyCore.modules.zones.list[zoneId] = nil
+end
 
 slyyCore.events:new("zones:interact", function(zoneId)
     if (slyyCore.modules.zones.list[zoneId] == nil) then return end 
@@ -66,7 +64,3 @@ slyyCore.events:basic("zones:interact", function(zoneId)
     if (slyyCore.modules.zones.list[zoneId] == nil) then return end 
     slyyCore.modules.zones.list[zoneId].onInteract(source)
 end)
-
--- slyyCore.events:new("onPlayerJoinded", function()
---     slyyCore.events:client("zones:receiveZones", source, slyyCore.modules.zones.list)
--- end)

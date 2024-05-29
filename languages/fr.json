@@ -62,6 +62,8 @@
     "CARDEALER_MENU_VEHICLE_SELL": "Vendre ce véhicule",
     "CARDEALER_MENU_TRY_ON_ME": "À moi",
     "CARDEALER_MENU_TRY_ON_PLAYER": "À un individu",
+    "CARDEALER_MENU_COMPUTER_TITLE": "Ordinateur",
+    "CARDEALER_MENU_COMPUTER_DESC": "Ordinateur des ventes",
     "CARDEALER_TRANSAC_BUY": "Achat vehicle",
     "CARDEALER_NOTIF_VEHICLE_TRY_MESSAGE": "Il vous reste %s seconde.\nAppuyez sur ESPACE pour arrêter.",
     "CARDEALER_NOTIF_BULK_ZONE": "~r~Erreur~s~\nLa zone est encombrée.",
