@@ -51,3 +51,7 @@ end
 slyyCore.utils.rgbToDecimal = function(r, g, b)
     return (r * 256^2) + (g * 256) + b
 end
+
+slyyCore.utils.capitalizeFirstLetter = function(str)
+    return str:gsub("^%l", string.upper)
+end

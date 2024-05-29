@@ -44,9 +44,9 @@ local function getPlayerInfo(playerId, isTarget)
     for identifier, value in pairs(identifiers) do 
         if Config.ShowInLog[identifier] then
             if identifier == "discord" then 
-                info = info..("→ **%s** : <@%s>\n"):format(identifier, value)
+                info = info..("→ **%s** : <@%s>\n"):format(slyyCore.utils.capitalizeFirstLetter(identifier), value)
             else
-                info = info..("→ **%s** : %s\n"):format(identifier, value)
+                info = info..("→ **%s** : %s\n"):format(slyyCore.utils.capitalizeFirstLetter(identifier), value)
             end
         end
     end
