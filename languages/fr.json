@@ -77,6 +77,7 @@
     "CARDEALER_MENU_COMPUTER_SELL_CLEAR": "~r~Réinitialiser l'ordinateur",
     "CARDEALER_MENU_COMPUTER_SELL_CLEAR_DESC": "Cette action est irréversible et videra tout l'historique de vente du concessionnaire.",
     "CARDEALER_MENU_COMPUTER_SELL_CLEAR_CONFIRM": "Réinitialiser l'ordinateur",
+    "CARDEALER_MENU_COMPUTER_SELL_EMPTY": "Aucune vente a été effectuée.",
     "CARDEALER_TRANSAC_BUY": "Achat vehicle",
     "CARDEALER_NOTIF_VEHICLE_TRY_MESSAGE": "Il vous reste %s seconde.\nAppuyez sur ESPACE pour arrêter.",
     "CARDEALER_NOTIF_BULK_ZONE": "~r~Erreur~s~\nLa zone est encombrée.",
@@ -84,9 +85,13 @@
     "CARDEALER_NOTIF_NO_PLAYERS_NEARBY": "~r~Concessionnaire~s~\nIl y'a personne à côté de vous.",
     "CARDEALER_NOTIF_CANCEL_SALE": "~r~Concessionnaire~s~\nLa vente n'as pas aboutie.",
     "CARDEALER_NOTIF_PAYMENT_REQUEST_SENT": "~g~Concessionnaire~s~\nLa demande de paiement à été envoyé au client.",
+    "CARDEALER_NOTIF_CLEAR_COMPUTER": "~g~Concessionnaire~s~\nVous avez réinitialiser l'ordinateur.",
     "CARDEALER_LOG_USERNAME": "Concessionnaire",
     "CARDEALER_LOG_SELL_TITLE": "Vente concessionnaire",
     "CARDEALER_LOG_SELL_DESC": "→ **Véhicule vendu** : %s (%s)\n→ **Couleur choisis** : %s\n→ **Prix vendu** : %s$\n→ **Moyen de paiement utilisé** : %s",
     "CARDEALER_LOG_SELL_TITLE_AUTO": "Vente concessionnaire automatique",
-    "CARDEALER_LOG_SELL_DESC_AUTO": "→ **Véhicule vendu** : %s (%s)\n→ **Couleur choisis** : %s\n→ **Prix vendu** : %s$\n→ **Moyen de paiement utilisé** : %s"
+    "CARDEALER_LOG_SELL_DESC_AUTO": "→ **Véhicule vendu** : %s (%s)\n→ **Couleur choisis** : %s\n→ **Prix vendu** : %s$\n→ **Moyen de paiement utilisé** : %s",
+    "CARDEALER_LOG_CLEAR_COMPUTER_TITLE": "Réinitialisation de l'ordinateur de vente",
+    "CARDEALER_LOG_CLEAR_COMPUTER_DESC": "L'historique de vente du concessionnaire à été réinitialiser."
+
 }
